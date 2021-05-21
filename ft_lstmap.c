@@ -6,7 +6,7 @@
 /*   By: mwen <mwen@student.42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 22:17:54 by mwen              #+#    #+#             */
-/*   Updated: 2021/05/21 23:14:22 by mwen             ###   ########.fr       */
+/*   Updated: 2021/05/21 23:57:53 by mwen             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,25 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*node;
 
 	if (lst)
+		return (NULL);
+	node = ft_lstnew(f(lst->content));
+	if (!node)
+		return (NULL);
+	head = node;
+	while (lst)
 	{
-		node = ft_lstnew(f(lst->content));
-		if (!node)
-			return (NULL);
-		head = node;
-		while (lst)
+		if (lst->next)
 		{
-			if (lst->next)
+			node->next = ft_lstnew(f(lst->next->content));
+			if (!(node->next))
 			{
-				node->next = ft_lstnew(f(lst->next->content));
-				if (!(node->next))
-				{
-					ft_lstclear(&node, del);
-					return (NULL);
-				}
-				node = node->next;
+				ft_lstclear(&node, del);
+				return (NULL);
 			}
-			lst = lst->next;
+			node = node->next;
 		}
-		node->next = NULL;
-		return (head);
+		lst = lst->next;
 	}
-	return (NULL);
+	node->next = NULL;
+	return (head);
 }
