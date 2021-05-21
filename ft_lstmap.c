@@ -6,7 +6,7 @@
 /*   By: mwen <mwen@student.42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 22:17:54 by mwen              #+#    #+#             */
-/*   Updated: 2021/05/21 23:57:53 by mwen             ###   ########.fr       */
+/*   Updated: 2021/05/22 00:02:28 by mwen             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*head;
 	t_list	*node;
 
-	if (lst)
+	if (!lst)
 		return (NULL);
 	node = ft_lstnew(f(lst->content));
 	if (!node)
