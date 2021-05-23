@@ -6,7 +6,7 @@
 /*   By: mwen <mwen@student.42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 22:31:44 by mwen              #+#    #+#             */
-/*   Updated: 2021/05/20 22:37:45 by mwen             ###   ########.fr       */
+/*   Updated: 2021/05/22 22:22:27 by mwen             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	**ft_split(char const *s, char c)
 	int		start;
 	char	**output;
 
-	output = malloc((get_output_len(s, c) + 1) * sizeof(char *));
+	output = (char **)malloc((get_output_len(s, c) + 1) * sizeof(char *));
 	if (!s || !output)
 		return (NULL);
 	i = 0;

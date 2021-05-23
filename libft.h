@@ -6,7 +6,7 @@
 /*   By: mwen <mwen@student.42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 13:58:34 by mwen              #+#    #+#             */
-/*   Updated: 2021/05/21 23:57:17 by mwen             ###   ########.fr       */
+/*   Updated: 2021/05/22 10:10:36 by mwen             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int		ft_isalnum(int arg);
 int		ft_isalpha(int arg);
 int		ft_isascii(int arg);
 int		ft_isdigit(int arg);
+int		ft_isprint(int arg);
 char	*ft_itoa(int n);
 void	*ft_memccpy(void *s1, const void *s2, int c, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);

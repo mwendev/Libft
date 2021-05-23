@@ -6,7 +6,7 @@
 #    By: mwen <mwen@student.42wolfsburg.de>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/12 12:00:25 by mwen              #+#    #+#              #
-#    Updated: 2021/05/21 22:29:58 by mwen             ###   ########.fr        #
+#    Updated: 2021/05/22 18:33:17 by mwen             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c ft_putchar_fd.c ft_split.c \
 					ft_memmove.c ft_putnbr_fd.c ft_strdup.c ft_strlen.c ft_strrchr.c \
 					ft_toupper.c ft_calloc.c ft_isdigit.c ft_memchr.c ft_memset.c \
 					ft_putstr_fd.c ft_strjoin.c ft_strmapi.c ft_strtrim.c
-SRCS_B			=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-					ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-					ft_lstmap.c
+SRCS_B			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
+					ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
+					ft_lstnew.c ft_lstsize.c ft_lstmap.c
 OBJS			=	${SRCS:.c=.o}
 OBJS_B			=	${SRCS_B:.c=.o}
 HEADER_FILES	=	libft.h
@@ -30,7 +30,10 @@ CFLAGS			=	-Wall -Werror -Wextra
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS) $(OBJS_B)
+$(NAME):		$(OBJS)
+				ar rcs $(NAME) $(OBJS)
+
+bonus:			$(OBJS) $(OBJS_B)
 				ar rcs $(NAME) $(OBJS) $(OBJS_B)
 
 %.o: 			%.c	$(HEADER_FILES)
@@ -40,8 +43,8 @@ clean:
 				$(RM) $(OBJS) $(OBJS_B)
 
 fclean:			clean
-				$(RM) $(NAME) $(OBJS_B)
+				$(RM) $(NAME)
 
 re:				fclean all
 
-.PHONY:			all %.o clean fcloean re
+.PHONY:			all %.o clean fcloean re bonus
