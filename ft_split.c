@@ -6,7 +6,7 @@
 /*   By: mwen <mwen@student.42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 22:31:44 by mwen              #+#    #+#             */
-/*   Updated: 2021/05/24 12:50:58 by mwen             ###   ########.fr       */
+/*   Updated: 2021/05/25 10:14:06 by mwen             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
-	output[j] = '\0';
+	output[j] = 0;
 	return (output);
 }
