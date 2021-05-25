@@ -6,7 +6,7 @@
 /*   By: mwen <mwen@student.42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 22:31:44 by mwen              #+#    #+#             */
-/*   Updated: 2021/05/22 22:22:27 by mwen             ###   ########.fr       */
+/*   Updated: 2021/05/24 12:50:58 by mwen             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ static char	*make_string(const char *s, int start, int finish)
 
 	i = 0;
 	string = (char *)malloc((finish - start + 1) * sizeof(char));
+	if (!string)
+		return (NULL);
 	while (start < finish)
 		string[i++] = s[start++];
 	string[i] = '\0';
@@ -53,7 +55,7 @@ char	**ft_split(char const *s, char c)
 	int		start;
 	char	**output;
 
-	output = (char **)malloc((get_output_len(s, c) + 1) * sizeof(char *));
+	output = (char **)ft_calloc((get_output_len(s, c) + 1), sizeof(char *));
 	if (!s || !output)
 		return (NULL);
 	i = 0;
@@ -70,6 +72,6 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
-	output[j] = 0;
+	output[j] = '\0';
 	return (output);
 }
