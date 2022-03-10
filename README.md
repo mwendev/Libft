@@ -4,12 +4,9 @@
 
 Remake of some useful C functions.
 
-- Status: still updating (I use libft a lot so I keep improving it)
-- Result: 115/100
+- Grade: 115/100
 - Keywords: Unix logic
-- Skills:	Imperative programming
-			Rigor
-			Algorithms & AI
+- Skills: Imperative programming/ Rigor/ Algorithms & AI
 
 
 ## How to install and use
