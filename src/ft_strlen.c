@@ -6,7 +6,7 @@
 /*   By: mwen <mwen@student.42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 00:28:56 by mwen              #+#    #+#             */
-/*   Updated: 2021/05/17 03:32:54 by mwen             ###   ########.fr       */
+/*   Updated: 2022/03/10 16:57:38 by mwen             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *str)
 	int	i;
 
 	i = 0;
-	while (*str)
+	while (str && *str)
 	{
 		str++;
 		i++;
